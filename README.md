@@ -38,6 +38,8 @@ git checkout 4.2
 git merge 4.1
 composer update --prefer-source
 # Test & make any further changes required
+
+git push --all origin
 ```
 
 ## Adding a new Laravel version
