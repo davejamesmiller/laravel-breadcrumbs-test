@@ -16,6 +16,8 @@ git checkout 4.1
 composer update --prefer-source
 ```
 
+**Note:** You may need to delete the session cookie when moving backwards.
+
 ## Making changes to the test app
 
 Make the changes to the earliest possible version then merge them
