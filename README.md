@@ -16,7 +16,9 @@ git checkout 4.1
 composer update --prefer-source
 ```
 
-**Note:** You will need to delete the session cookie in your browser when moving backwards from 4.1 to 4.0 else `SessionHandler::read()` will throw an exception.
+You will need to delete the session cookie in your browser when moving backwards from 4.1 to 4.0 else `SessionHandler::read()` will throw an exception.
+
+Sometimes I find Composer gets stuck updating `symfony/debug` - not sure why, but `rm -rf vendor/` usually fixes it.
 
 ## Making changes to the test app
 
