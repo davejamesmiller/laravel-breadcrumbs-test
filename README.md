@@ -16,7 +16,7 @@ git checkout 4.1
 composer update --prefer-source
 ```
 
-**Note:** You may need to delete the session cookie when moving backwards.
+**Note:** You will need to delete the session cookie in your browser when moving backwards from 4.1 to 4.0 else `SessionHandler::read()` will throw an exception.
 
 ## Making changes to the test app
 
