@@ -39,15 +39,24 @@ git merge 4.1
 composer update --prefer-source
 # Test & make any further changes required
 
+git checkout 5.0
+git merge 4.2
+composer update --prefer-source
+# Test & make any further changes required
+
 git push --all origin
 ```
 
 ## Adding a new Laravel version
 
 ```bash
-git checkout 4.2
-git checkout -b 4.3
+git checkout 5.0
+git checkout -b 5.1
 git fetch upstream
 git merge upstream/develop # Or upstream/master if it has been released
+# Resolve any conflicts
 composer update --prefer-source
+# Test & make any further changes required
+
+git push --all origin
 ```
