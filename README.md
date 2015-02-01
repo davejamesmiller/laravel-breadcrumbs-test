@@ -3,9 +3,8 @@
 ## Installing
 
 ```bash
-git clone git@github.com:davejamesmiller/laravel-breadcrumbs-test.git
+git clone git@github.com:davejamesmiller/laravel-breadcrumbs-test.git -b 4.0
 git remote add upstream git@github.com:laravel/laravel.git
-git checkout 4.0
 composer update --prefer-source
 ```
 
