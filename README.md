@@ -10,21 +10,12 @@ composer update --prefer-source
 
 ## Testing different Laravel versions
 
-### Laravel 5 (Breadcrumbs 3.x)
-
 ```bash
-git checkout 5.0
+git checkout <version>
 composer update --prefer-source
 ```
 
-### Laravel 4 (Breadcrumbs 2.x)
-
-```bash
-git checkout 4.1
-composer update --prefer-source
-```
-
-You will need to delete the session cookie in your browser when moving backwards from 4.1 to 4.0 else `SessionHandler::read()` will throw an exception.
+**Note:** You will need to delete the session cookie in your browser when moving backwards from 4.1 to 4.0 else `SessionHandler::read()` will throw an exception.
 
 Sometimes I find Composer gets stuck updating `symfony/debug` - not sure why, but `rm -rf vendor/` usually fixes it.
 
