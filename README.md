@@ -11,7 +11,7 @@ composer update --prefer-source
 ## Testing different Laravel versions
 
 ```bash
-git checkout <version>
+git checkout <version> # 5.0 / 4.2 / 4.1 / 4.0
 composer update --prefer-source
 ```
 
