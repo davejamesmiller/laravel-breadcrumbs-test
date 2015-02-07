@@ -38,6 +38,7 @@ git push --all origin
 ```bash
 git checkout 4.0
 composer update --prefer-source
+# Delete session cookie in browser
 # Make & commit changes for 4.0
 
 git checkout 4.1
