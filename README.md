@@ -3,12 +3,21 @@
 ## Installing
 
 ```bash
-git clone git@github.com:davejamesmiller/laravel-breadcrumbs-test.git -b 4.0
+git clone git@github.com:davejamesmiller/laravel-breadcrumbs-test.git -b 5.0
 git remote add upstream git@github.com:laravel/laravel.git
 composer update --prefer-source
 ```
 
 ## Testing different Laravel versions
+
+### Laravel 5 (Breadcrumbs 3.x)
+
+```bash
+git checkout 5.0
+composer update --prefer-source
+```
+
+### Laravel 4 (Breadcrumbs 2.x)
 
 ```bash
 git checkout 4.1
@@ -23,25 +32,32 @@ Sometimes I find Composer gets stuck updating `symfony/debug` - not sure why, bu
 
 Make the changes to the earliest possible version then merge them
 
+### Laravel 5 (Breadcrumbs 3.x)
+
+```bash
+git checkout 5.0
+composer update --prefer-source
+# Make & commit changes for 5.0
+
+git push --all origin
+```
+
+### Laravel 4 (Breadcrumbs 2.x)
+
 ```bash
 git checkout 4.0
 composer update --prefer-source
-# Make & commit changes
+# Make & commit changes for 4.0
 
 git checkout 4.1
 git merge 4.0
 composer update --prefer-source
-# Test & make any further changes required
+# Test & make any further changes required for 4.1
 
 git checkout 4.2
 git merge 4.1
 composer update --prefer-source
-# Test & make any further changes required
-
-git checkout 5.0
-git merge 4.2
-composer update --prefer-source
-# Test & make any further changes required
+# Test & make any further changes required for 4.2
 
 git push --all origin
 ```
