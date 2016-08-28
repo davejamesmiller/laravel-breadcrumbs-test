@@ -26,13 +26,14 @@ cd www
 ln -s ../<version>/public <version>
 ```
 
-- Update `path` in `config/session.php`
 - Copy files from previous version:
     - `app/Category.php`
     - `app/Post.php`
     - `app/Http/breadcrumbs.php`
     - `app/Http/routes.php`
+    - `config/breadcrumbs.php`
     - `resources/views/_breadcrumbs/print_r.blade.php`
+    - `resources/views/errors/404.blade.php`
     - `resources/views/layouts/bootstrap2.blade.php`
     - `resources/views/layouts/bootstrap3.blade.php`
     - `resources/views/_menu.blade.php`
@@ -40,8 +41,13 @@ ln -s ../<version>/public <version>
     - `resources/views/blog.blade.php`
     - `resources/views/bootstrap2.blade.php`
     - `resources/views/category.blade.php`
-    - `resources/views/homepage.blade.php`
+    - `resources/views/home.blade.php`
     - `resources/views/post.blade.php`
     - `resources/views/print_r.blade.php`
+- Update `repositories` and `require` sections in `composer.json`
+- Update `debug`, `key`, `providers` and `aliases` in `config/app.php`
+- Update `path` in `config/session.php`
+- Update `scripts/setup.sh` to include the new version
+- Run `scripts/setup.sh`
 - Update as needed to make it work
 - Commit and push
