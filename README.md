@@ -2,68 +2,46 @@
 
 ## Installing
 
-```bash
-git clone git@github.com:davejamesmiller/laravel-breadcrumbs-test.git -b 5.0
-git remote add upstream git@github.com:laravel/laravel.git
-composer update --prefer-source
-```
-
-## Testing different Laravel versions
+This will only work on systems that support symlinks - i.e. not Windows!
 
 ```bash
-git checkout <version> # 5.0 / 4.2 / 4.1 / 4.0
-composer update --prefer-source
+git clone git@github.com:davejamesmiller/laravel-breadcrumbs-test.git
+scripts/setup.sh
 ```
 
-**Note:** You will need to delete the session cookie in your browser when moving backwards from 4.1 to 4.0 else `SessionHandler::read()` will throw an exception.
+Point the document root at the `www/` directory and open up a web browser. There is a separate folder for each version of Laravel, each containing a test application.
 
-Sometimes I find Composer gets stuck updating `symfony/debug` - not sure why, but `rm -rf vendor/` usually fixes it.
-
-## Making changes to the test app
-
-Make the changes to the earliest possible version then merge them
-
-### Laravel 5 (Breadcrumbs 3.x)
-
-```bash
-git checkout 5.0
-composer update --prefer-source
-# Make & commit changes for 5.0
-
-git push --all origin
-```
-
-### Laravel 4 (Breadcrumbs 2.x)
-
-```bash
-git checkout 4.0
-composer update --prefer-source
-# Delete session cookie in browser
-# Make & commit changes for 4.0
-
-git checkout 4.1
-git merge 4.0
-composer update --prefer-source
-# Test & make any further changes required for 4.1
-
-git checkout 4.2
-git merge 4.1
-composer update --prefer-source
-# Test & make any further changes required for 4.2
-
-git push --all origin
-```
+Laravel Breadcrumbs itself will be installed in `breadcrumbs-2/` (2.x branch) and `breadcrumbs-3/` (master branch).
 
 ## Adding a new Laravel version
 
 ```bash
-git checkout 5.0
-git checkout -b 5.1
-git fetch upstream
-git merge upstream/develop # Or upstream/master if it has been released
-# Resolve any conflicts
-composer update --prefer-source
-# Test & make any further changes required
-
-git push --all origin
+cd laravel
+git checkout master  # Or another branch (master = stable, develop = unstable, or a version number)
+git pull
+cd ..
+cp -r laravel <version>
+rm -rf <version>/.git
+cd www
+ln -s ../<version>/public <version>
 ```
+
+- Update `path` in `config/session.php`
+- Copy files from previous version:
+    - `app/Category.php`
+    - `app/Post.php`
+    - `app/Http/breadcrumbs.php`
+    - `app/Http/routes.php`
+    - `resources/views/_breadcrumbs/print_r.blade.php`
+    - `resources/views/layouts/bootstrap2.blade.php`
+    - `resources/views/layouts/bootstrap3.blade.php`
+    - `resources/views/_menu.blade.php`
+    - `resources/views/_samples.blade.php`
+    - `resources/views/blog.blade.php`
+    - `resources/views/bootstrap2.blade.php`
+    - `resources/views/category.blade.php`
+    - `resources/views/homepage.blade.php`
+    - `resources/views/post.blade.php`
+    - `resources/views/print_r.blade.php`
+- Update as needed to make it work
+- Commit and push

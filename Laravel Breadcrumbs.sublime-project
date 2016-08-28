@@ -1,0 +1,16 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"folder_exclude_patterns":
+			[
+				"docs-html",
+				"docs-pdf",
+				"storage",
+				"vendor",
+				"www/*"
+			]
+		}
+	]
+}
