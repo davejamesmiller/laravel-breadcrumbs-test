@@ -27,7 +27,7 @@ if [ ! -d laravel ]; then
     git clone git@github.com:laravel/laravel.git
 fi
 
-for ver in 4.0 4.1 4.2 5.0 5.1; do
+for ver in 4.0 4.1 4.2 5.0 5.1 5.2; do
     if [ ! -d $ver/vendor ]; then
         echo
         echo "Installing dependencies for application (Laravel $ver)..."

@@ -32,10 +32,9 @@ ln -s ../<version>/public <version>
     - `app/Http/breadcrumbs.php`
     - `app/Http/routes.php`
     - `config/breadcrumbs.php`
-    - `resources/views/_breadcrumbs/print_r.blade.php`
+    - `resources/views/_breadcrumbs/`
     - `resources/views/errors/404.blade.php`
-    - `resources/views/layouts/bootstrap2.blade.php`
-    - `resources/views/layouts/bootstrap3.blade.php`
+    - `resources/views/layouts/`
     - `resources/views/_menu.blade.php`
     - `resources/views/_samples.blade.php`
     - `resources/views/blog.blade.php`
@@ -49,5 +48,5 @@ ln -s ../<version>/public <version>
 - Update `path` in `config/session.php`
 - Update `scripts/setup.sh` to include the new version
 - Run `scripts/setup.sh`
-- Update as needed to make it work
-- Commit and push
+- Test it and update as needed
+- Commit and push changes
