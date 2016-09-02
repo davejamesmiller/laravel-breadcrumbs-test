@@ -2,6 +2,8 @@
 
 ## Installing
 
+**Note:** Laravel 5.3+ requires PHP 5.6+.
+
 This will only work on systems that support symlinks - i.e. not Windows!
 
 ```bash

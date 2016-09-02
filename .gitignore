@@ -1,2 +1,5 @@
 /breadcrumbs-*/
 /laravel/
+
+composer.lock
+*.sublime-workspace
