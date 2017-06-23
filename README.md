@@ -11,9 +11,9 @@ git clone git@github.com:davejamesmiller/laravel-breadcrumbs-test.git
 scripts/setup.sh
 ```
 
-Point the document root at the `www/` directory and open up a web browser. There is a separate folder for each version of Laravel, each containing a test application.
+Point the document root at the `www/` directory and open up a web browser. There is a separate folder for each supported version of Laravel, each containing a test application.
 
-Laravel Breadcrumbs itself will be installed in `breadcrumbs-2/` (2.x branch) and `breadcrumbs-3/` (master branch).
+Laravel Breadcrumbs itself will be installed in `breadcrumbs/`.
 
 ## Adding a new Laravel version
 

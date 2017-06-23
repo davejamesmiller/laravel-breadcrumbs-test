@@ -7,7 +7,7 @@
     "repositories": [
         {
             "type": "path",
-            "url": "../breadcrumbs-3",
+            "url": "../breadcrumbs",
             "options": {
                 "symlink": true
             }
