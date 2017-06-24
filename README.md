@@ -43,7 +43,7 @@ ln -s ../<version>/public <version>
     - `resources/views/home.blade.php`
     - `resources/views/post.blade.php`
     - `resources/views/print_r.blade.php`
-    - `routes/breadcrumbs.php` (TODO: Is this the right place to put it??)
+    - `routes/breadcrumbs.php`
     - `routes/web.php`
 - Update `repositories` and `require` sections in `composer.json`
 - Update `debug`, `key`, `providers` and `aliases` in `config/app.php`

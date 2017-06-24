@@ -1,41 +1,43 @@
 <?php namespace App;
 
-class Category {
+class Category
+{
+    public $id;
 
-	public $id;
+    public function __construct($id)
+    {
+        $this->id = $id;
+    }
 
-	public function __construct($id)
-	{
-		$this->id = $id;
-	}
+    public function __get($var)
+    {
+        $method = 'get' . ucfirst($var);
 
-	public function __get($var)
-	{
-		$method = 'get' . ucfirst($var);
-		return $this->$method();
-	}
+        return $this->$method();
+    }
 
-	public function getTitle()
-	{
-		return 'Category ' . $this->id;
-	}
+    public function getTitle()
+    {
+        return 'Category ' . $this->id;
+    }
 
-	public function getParent()
-	{
-		if ($this->id == 1)
-			return null;
-		else
-			return new Category($this->id - 1);
-	}
+    public function getParent()
+    {
+        if ($this->id == 1) {
+            return null;
+        } else {
+            return new Category($this->id - 1);
+        }
+    }
 
-	public function getAncestors()
-	{
-		$parent = $this->parent;
+    public function getAncestors()
+    {
+        $parent = $this->parent;
 
-		if (!$parent)
-			return [];
+        if (! $parent) {
+            return [];
+        }
 
-		return array_merge($parent->ancestors, [$parent]);
-	}
-
+        return array_merge($parent->ancestors, [$parent]);
+    }
 }

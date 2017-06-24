@@ -1,28 +1,28 @@
 <?php namespace App;
 
-class Post {
+class Post
+{
+    public $id;
 
-	public $id;
+    public function __construct($id)
+    {
+        $this->id = $id;
+    }
 
-	public function __construct($id)
-	{
-		$this->id = $id;
-	}
+    public function __get($var)
+    {
+        $method = 'get' . ucfirst($var);
 
-	public function __get($var)
-	{
-		$method = 'get' . ucfirst($var);
-		return $this->$method();
-	}
+        return $this->$method();
+    }
 
-	public function getTitle()
-	{
-		return 'Post ' . $this->id;
-	}
+    public function getTitle()
+    {
+        return 'Post ' . $this->id;
+    }
 
-	public function getCategory()
-	{
-		return new Category($this->id);
-	}
-
+    public function getCategory()
+    {
+        return new Category($this->id);
+    }
 }
