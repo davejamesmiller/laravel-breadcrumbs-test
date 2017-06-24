@@ -19,26 +19,26 @@ Route::bind('post', function ($id) {
     return new App\Post($id);
 });
 
-Route::get('/', function () {
+Route::name('home')->get('/', function () {
     return view('home');
-})->name('home');
+});
 
-Route::get('/blog', function () {
+Route::name('blog')->get('/blog', function () {
     return view('blog');
-})->name('blog');
+});
 
-Route::get('/category/{category}', function ($category) {
+Route::name('category')->get('/category/{category}', function ($category) {
     return view('category', compact('category'));
-})->name('category');
+});
 
-Route::get('/post/{post}', function ($post) {
+Route::name('post')->get('/post/{post}', function ($post) {
     return view('post', compact('post'));
-})->name('post');
+});
 
-Route::get('/bootstrap2', function () {
+Route::name('bootstrap2')->get('/bootstrap2', function () {
     return view('bootstrap2');
-})->name('bootstrap2');
+});
 
-Route::get('/print_r', function () {
+Route::name('print_r')->get('/print_r', function () {
     return view('print_r');
-})->name('print_r');
+});
