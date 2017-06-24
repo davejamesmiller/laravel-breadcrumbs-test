@@ -20,25 +20,25 @@ Route::bind('post', function ($id) {
 });
 
 Route::get('/', function () {
-    return View::make('home');
+    return view('home');
 })->name('home');
 
 Route::get('/blog', function () {
-    return View::make('blog');
+    return view('blog');
 })->name('blog');
 
 Route::get('/category/{category}', function ($category) {
-    return View::make('category', compact('category'));
+    return view('category', compact('category'));
 })->name('category');
 
 Route::get('/post/{post}', function ($post) {
-    return View::make('post', compact('post'));
+    return view('post', compact('post'));
 })->name('post');
 
 Route::get('/bootstrap2', function () {
-    return View::make('bootstrap2');
+    return view('bootstrap2');
 })->name('bootstrap2');
 
 Route::get('/print_r', function () {
-    return View::make('print_r');
+    return view('print_r');
 })->name('print_r');
