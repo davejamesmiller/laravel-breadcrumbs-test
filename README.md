@@ -46,7 +46,7 @@ ln -s ../<version>/public <version>
     - `routes/breadcrumbs.php`
     - `routes/web.php`
 - Update `repositories` and `require` sections in `composer.json`
-- Update `debug`, `key`, `providers` and `aliases` in `config/app.php`
+- Update `debug`, `key` in `config/app.php`
 - Update `path` in `config/session.php`
 - Update `scripts/setup.sh` to include the new version (if required)
 - Run `scripts/setup.sh`
