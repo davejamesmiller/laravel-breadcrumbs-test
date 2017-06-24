@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Laravel Breadcrumbs 5.0 Test</h1>
+    <h1>Laravel Breadcrumbs Test</h1>
 
     @include('_samples')
 
