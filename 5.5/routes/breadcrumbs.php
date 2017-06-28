@@ -30,3 +30,8 @@ Breadcrumbs::register('text', function ($breadcrumbs) {
     $breadcrumbs->push('Text 2');
     $breadcrumbs->push('Text 3');
 });
+
+Breadcrumbs::register('section-test', function ($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('@section() Test', route('section'));
+});

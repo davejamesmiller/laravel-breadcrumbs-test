@@ -18,7 +18,7 @@
             </div>
 
             <h1>Breadcrumbs for this page:</h1>
-            {!! Breadcrumbs::renderIfExists() !!}
+            {{ Breadcrumbs::renderIfExists() }}
 
             @yield('content')
 

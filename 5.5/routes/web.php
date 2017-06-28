@@ -35,6 +35,10 @@ Route::name('post')->get('/post/{post}', function ($post) {
     return view('post', compact('post'));
 });
 
+Route::name('section')->get('/section', function () {
+    return view('section');
+});
+
 Route::name('bootstrap2')->get('/bootstrap2', function () {
     return view('bootstrap2');
 });

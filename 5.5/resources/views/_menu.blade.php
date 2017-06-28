@@ -5,5 +5,6 @@
 <li><a href="{{ route('post', 1) }}">Post 1</a></li>
 <li><a href="{{ route('post', 2) }}">Post 2</a></li>
 <li><a href="{{ url('missing') }}">Error 404</a></li>
+<li><a href="{{ route('section') }}"><em>@@section() Test</em></a></li>
 <li><a href="{{ route('bootstrap2') }}"><em>Twitter Bootstrap 2</em></a></li>
 <li><a href="{{ route('print_r') }}"><em>Custom View</em></a></li>

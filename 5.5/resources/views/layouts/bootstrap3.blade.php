@@ -18,7 +18,13 @@
             </nav>
 
             <h1>Breadcrumbs for this page:</h1>
-            {!! Breadcrumbs::renderIfExists() !!}
+            @hasSection('breadcrumbs')
+                @yield('breadcrumbs')
+                <p><em>Rendered with @@yield()</em></p>
+            @else
+                {{ Breadcrumbs::renderIfExists() }}
+                <p><em>Rendered with Breadcrumbs::renderIfExists()</em></p>
+            @endif
 
             @yield('content')
 
