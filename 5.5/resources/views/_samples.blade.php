@@ -18,3 +18,6 @@
 
 <h2>Text</h2>
 {{ Breadcrumbs::render('text') }}
+
+<h2>Invalid</h2>
+{{ Breadcrumbs::render('invalid') }}

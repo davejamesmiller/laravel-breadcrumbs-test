@@ -25,4 +25,9 @@ class Post
     {
         return new Category($this->id);
     }
+
+    public function getImage()
+    {
+        return "images/post{$this->id}.jpg";
+    }
 }

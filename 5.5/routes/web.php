@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,6 +13,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::bind('category', function ($id) {
     return new App\Category($id);
@@ -28,7 +35,9 @@ Route::name('blog')->get('/blog', function () {
 });
 
 Route::name('category')->get('/category/{category}', function ($category) {
-    return view('category', compact('category'));
+    $paginator = (new LengthAwarePaginator([], 100, 10))->setPath(Paginator::resolveCurrentPath());
+
+    return view('category', compact('category', 'paginator'));
 });
 
 Route::name('post')->get('/post/{post}', function ($post) {
@@ -43,6 +52,26 @@ Route::name('bootstrap2')->get('/bootstrap2', function () {
     return view('bootstrap2');
 });
 
+Route::name('bootstrap3')->get('/bootstrap3', function () {
+    return view('bootstrap3');
+});
+
+Route::name('foundation6')->get('/foundation6', function () {
+    return view('foundation6');
+});
+
+Route::name('materialize')->get('/materialize', function () {
+    return view('materialize');
+});
+
 Route::name('print_r')->get('/print_r', function () {
     return view('print_r');
+});
+
+Route::get('/unnamed', function () {
+    return view('unnamed');
+});
+
+Route::name('server-error')->get('/server-error', function () {
+    abort(500);
 });

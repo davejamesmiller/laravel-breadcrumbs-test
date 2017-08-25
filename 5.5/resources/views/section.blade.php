@@ -1,4 +1,4 @@
-@extends('layouts/bootstrap3')
+@extends('layouts/default')
 
 @section('breadcrumbs', Breadcrumbs::render('section-test'))
 

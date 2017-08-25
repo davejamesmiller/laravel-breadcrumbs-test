@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>{{ $post->title }}</h1>
+    <h1>Unnamed route</h1>
     <p>Content goes here...</p>
 
 @stop
