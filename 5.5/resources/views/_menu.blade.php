@@ -11,6 +11,7 @@
 <br>
 <a href="{{ route('bootstrap3') }}">Bootstrap 3</a> /
 <a href="{{ route('bootstrap2') }}">Bootstrap 2</a> /
+<a href="{{ route('bulma') }}">Bulma</a> /
 <a href="{{ route('foundation6') }}">Foundation 6</a> /
 <a href="{{ route('materialize') }}">Materialize</a> /
 <a href="{{ route('print_r') }}">print_r</a>

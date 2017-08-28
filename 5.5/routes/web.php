@@ -26,13 +26,8 @@ Route::bind('post', function ($id) {
     return new App\Post($id);
 });
 
-Route::name('home')->get('/', function () {
-    return view('home');
-});
-
-Route::name('blog')->get('/blog', function () {
-    return view('blog');
-});
+Route::view('/', 'home')->name('home');
+Route::view('/blog', 'blog')->name('blog');
 
 Route::name('category')->get('/category/{category}', function ($category) {
     $paginator = (new LengthAwarePaginator([], 100, 10))->setPath(Paginator::resolveCurrentPath());
@@ -44,33 +39,15 @@ Route::name('post')->get('/post/{post}', function ($post) {
     return view('post', compact('post'));
 });
 
-Route::name('section')->get('/section', function () {
-    return view('section');
-});
+Route::view('/section', 'section')->name('section');
+Route::view('/bootstrap2', 'bootstrap2')->name('bootstrap2');
+Route::view('/bootstrap3', 'bootstrap3')->name('bootstrap3');
+Route::view('/bulma', 'bulma')->name('bulma');
+Route::view('/foundation6', 'foundation6')->name('foundation6');
+Route::view('/materialize', 'materialize')->name('materialize');
+Route::view('/print_r', 'print_r')->name('print_r');
 
-Route::name('bootstrap2')->get('/bootstrap2', function () {
-    return view('bootstrap2');
-});
-
-Route::name('bootstrap3')->get('/bootstrap3', function () {
-    return view('bootstrap3');
-});
-
-Route::name('foundation6')->get('/foundation6', function () {
-    return view('foundation6');
-});
-
-Route::name('materialize')->get('/materialize', function () {
-    return view('materialize');
-});
-
-Route::name('print_r')->get('/print_r', function () {
-    return view('print_r');
-});
-
-Route::get('/unnamed', function () {
-    return view('unnamed');
-});
+Route::view('/unnamed', 'unnamed');
 
 Route::name('server-error')->get('/server-error', function () {
     abort(500);
