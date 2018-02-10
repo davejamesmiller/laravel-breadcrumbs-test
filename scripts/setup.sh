@@ -28,10 +28,14 @@ if [ ! -d laravel ]; then
 fi
 
 for ver in 5.*; do
-    if [ ! -d $ver/vendor ]; then
+    if [ ! -L $ver/vendor/davejamesmiller/laravel-breadcrumbs ]; then
+        rm -rf $ver/vendor/davejamesmiller/laravel-breadcrumbs
+    fi
+
+    if [ ! -d $ver/vendor/davejamesmiller/laravel-breadcrumbs ]; then
         echo
         echo "Installing dependencies for application (Laravel $ver)..."
         echo
-        ( cd $ver && composer install )
+        ( cd $ver && composer update )
     fi
 done

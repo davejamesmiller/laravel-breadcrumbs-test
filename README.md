@@ -2,8 +2,6 @@
 
 ## Installing
 
-**Note:** Laravel 5.3+ requires PHP 5.6+.
-
 This will only work on systems that support symlinks - i.e. not Windows!
 
 ```bash
@@ -31,24 +29,31 @@ ln -s ../<version>/public <version>
 - Copy files from previous version:
     - `app/Category.php`
     - `app/Post.php`
+    - `breadcrumbs/`
     - `config/breadcrumbs.php`
     - `resources/views/_breadcrumbs/`
-    - `resources/views/errors/404.blade.php`
+    - `resources/views/errors/`
     - `resources/views/layouts/`
     - `resources/views/_menu.blade.php`
     - `resources/views/_samples.blade.php`
     - `resources/views/blog.blade.php`
     - `resources/views/bootstrap2.blade.php`
+    - `resources/views/bootstrap3.blade.php`
+    - `resources/views/bulma.blade.php`
     - `resources/views/category.blade.php`
+    - `resources/views/foundation6.blade.php`
     - `resources/views/home.blade.php`
+    - `resources/views/materialize.blade.php`
     - `resources/views/post.blade.php`
     - `resources/views/print_r.blade.php`
-    - `routes/breadcrumbs.php`
+    - `resources/views/section.blade.php`
+    - `resources/views/unnamed.blade.php`
     - `routes/web.php`
-- Update `repositories` and `require` sections in `composer.json`
-- Update `debug`, `key` in `config/app.php`
-- Update `path` in `config/session.php`
+- Update `repositories` and `require` sections in `<version>/composer.json`
+- Update `debug`, `key` in `<version>/config/app.php`
+- Update `path` in `<version>/config/session.php`
 - Update `scripts/setup.sh` to include the new version (if required)
+- Update `breadcrumbs/composer.json` to support the new version
 - Run `scripts/setup.sh`
 - Test it and update as needed
 - Commit and push changes
