@@ -27,15 +27,13 @@ if [ ! -d laravel ]; then
     git clone git@github.com:laravel/laravel.git
 fi
 
-for ver in 5.*; do
-    if [ ! -L $ver/vendor/davejamesmiller/laravel-breadcrumbs ]; then
-        rm -rf $ver/vendor/davejamesmiller/laravel-breadcrumbs
-    fi
+if [ ! -L project/vendor/davejamesmiller/laravel-breadcrumbs ]; then
+    rm -rf project/vendor/davejamesmiller/laravel-breadcrumbs
+fi
 
-    if [ ! -d $ver/vendor/davejamesmiller/laravel-breadcrumbs ]; then
-        echo
-        echo "Installing dependencies for application (Laravel $ver)..."
-        echo
-        ( cd $ver && composer update )
-    fi
-done
+if [ ! -d project/vendor/davejamesmiller/laravel-breadcrumbs ]; then
+    echo
+    echo "Installing dependencies for project..."
+    echo
+    ( cd project && composer update )
+fi
