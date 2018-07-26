@@ -20,11 +20,11 @@ if [ ! -d breadcrumbs/vendor ]; then
     ( cd breadcrumbs && composer install )
 fi
 
-if [ ! -d laravel ]; then
+if [ ! -d laravel-template ]; then
     echo
     echo "Installing Laravel Template..."
     echo
-    git clone git@github.com:laravel/laravel.git
+    git clone git@github.com:laravel/laravel.git laravel-template
 fi
 
 if [ ! -L project/vendor/davejamesmiller/laravel-breadcrumbs ]; then

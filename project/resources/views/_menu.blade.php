@@ -14,4 +14,5 @@
 <a href="{{ route('bulma') }}">Bulma</a> /
 <a href="{{ route('foundation6') }}">Foundation 6</a> /
 <a href="{{ route('materialize') }}">Materialize</a> /
-<a href="{{ route('print_r') }}">print_r</a>
+<a href="{{ route('print_r') }}">print_r</a> /
+<a href="{{ route('phpinfo') }}">phpinfo()</a>

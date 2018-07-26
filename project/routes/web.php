@@ -52,3 +52,7 @@ Route::view('/unnamed', 'unnamed');
 Route::name('server-error')->get('/server-error', function () {
     abort(500);
 });
+
+Route::name('phpinfo')->get('/phpinfo', function () {
+    phpinfo();
+});

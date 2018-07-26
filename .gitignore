@@ -1,5 +1,4 @@
 /breadcrumbs/
-/laravel/
+/laravel-template/
 
 composer.lock
-*.sublime-workspace
