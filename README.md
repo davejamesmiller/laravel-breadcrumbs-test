@@ -50,9 +50,10 @@ ln -s ../laravel-$version-project/public laravel-$version
     - `resources/views/section.blade.php`
     - `resources/views/unnamed.blade.php`
     - `routes/web.php`
-- Update `repositories` and `require` sections in `laravel-$version-project/composer.json`
-- Update `debug`, `key` in `laravel-$version-project/config/app.php`
-- Update `path` in `laravel-$version-project/config/session.php`
+- Compare the old and new versions for things that need to be updated:
+    - `repositories` and `require` sections in `composer.json`
+    - `debug`, `key` in `config/app.php`
+    - `path` in `config/session.php`
 - Update `scripts/setup.sh` to include the new version (if required)
 - Update `breadcrumbs/composer.json` to support the new version
 - Run `scripts/setup.sh`
