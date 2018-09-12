@@ -59,3 +59,9 @@ ln -s ../laravel-$version-project/public laravel-$version
 - Run `scripts/setup.sh`
 - Test it and update as needed
 - Commit and push changes
+
+## Removing an old Laravel version
+
+- `rm -rf laravel-<version>-project`
+- `rm -f public/laravel-<version>`
+- Commit and push changes
