@@ -40,4 +40,9 @@ for project in laravel-*-project; do
         echo
         ( cd $project && composer update )
     fi
+
+    if [ ! -L $project/vendor/davejamesmiller/laravel-breadcrumbs ]; then
+        echo "ERROR: $project/vendor/davejamesmiller/laravel-breadcrumbs/ is not a symlink" >&2
+        exit 1
+    fi
 done

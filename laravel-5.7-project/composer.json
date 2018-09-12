@@ -7,7 +7,7 @@
     "repositories": [
         {
             "type": "path",
-            "url": "../breadcrumbs",
+            "url": "../laravel-breadcrumbs",
             "options": {
                 "symlink": true
             }
