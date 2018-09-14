@@ -13,7 +13,7 @@
                 @include('_menu')
             </p>
 
-            <h1>Twitter Bootstrap 2</h1>
+            <h1>Bootstrap 2</h1>
 
             <?php Config::set('breadcrumbs.view', 'breadcrumbs::bootstrap2') ?>
             @include('_samples')
