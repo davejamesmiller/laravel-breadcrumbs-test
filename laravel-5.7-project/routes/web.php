@@ -45,6 +45,7 @@ Route::view('/bootstrap3', 'bootstrap3')->name('bootstrap3');
 Route::view('/bulma', 'bulma')->name('bulma');
 Route::view('/foundation6', 'foundation6')->name('foundation6');
 Route::view('/materialize', 'materialize')->name('materialize');
+Route::view('/uikit', 'uikit')->name('uikit');
 Route::view('/print_r', 'print_r')->name('print_r');
 
 Route::view('/unnamed', 'unnamed');
