@@ -6,18 +6,18 @@ cd "$(dirname "$0")/.."
 # Install all dependencies for Laravel Breadcrumbs.
 ################################################################################
 
-if [ ! -d laravel-breadcrumbs ]; then
+if [ ! -d breadcrumbs ]; then
     echo
     echo "Installing Laravel Breadcrumbs..."
     echo
-    git clone git@github.com:davejamesmiller/laravel-breadcrumbs.git laravel-breadcrumbs
+    git clone git@github.com:davejamesmiller/laravel-breadcrumbs.git breadcrumbs
 fi
 
-if [ ! -d laravel-breadcrumbs/vendor ]; then
+if [ ! -d breadcrumbs/vendor ]; then
     echo
     echo "Installing development dependencies for Laravel Breadcrumbs..."
     echo
-    ( cd laravel-breadcrumbs && composer install )
+    ( cd breadcrumbs && composer install )
 fi
 
 if [ ! -d laravel-template ]; then
@@ -27,8 +27,8 @@ if [ ! -d laravel-template ]; then
     git clone git@github.com:laravel/laravel.git laravel-template
 fi
 
-for project in laravel-*-project; do
-    version=${project:8:-8}
+for project in project-*; do
+    version=${project:8}
 
     if [ ! -L $project/vendor/davejamesmiller/laravel-breadcrumbs ]; then
         rm -rf $project/vendor/davejamesmiller/laravel-breadcrumbs
@@ -43,6 +43,9 @@ for project in laravel-*-project; do
 
     if [ ! -L $project/vendor/davejamesmiller/laravel-breadcrumbs ]; then
         echo "ERROR: $project/vendor/davejamesmiller/laravel-breadcrumbs/ is not a symlink" >&2
+        exit 1
+    elif [ ! -d $project/vendor/davejamesmiller/laravel-breadcrumbs ]; then
+        echo "ERROR: $project/vendor/davejamesmiller/laravel-breadcrumbs/ is a broken symlink" >&2
         exit 1
     fi
 done

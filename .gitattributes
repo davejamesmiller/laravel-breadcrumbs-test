@@ -1,3 +1,3 @@
-/laravel-*-project/public/css/** binary
-/laravel-*-project/public/js/** binary
-/laravel-*-project/public/svg/** binary
+/project-*/public/css/** binary
+/project-*/public/js/** binary
+/project-*/public/svg/** binary

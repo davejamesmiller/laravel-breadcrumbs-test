@@ -3,13 +3,12 @@ set -o nounset -o pipefail -o errexit
 cd "$(dirname "$0")/.."
 
 ################################################################################
-# Run IDE Helper for the test projects.
+# Update symlinks in `public/`.
 ################################################################################
 
-for project in project-*; do
-    cd $project
-    php artisan ide-helper:generate
-    php artisan ide-helper:meta
-    #php artisan ide-helper:models --reset --write
-    cd ..
+find public -type l -exec rm -fv '{}' +
+
+for dir in project-*; do
+    version="${dir:8}"
+    ln -nsfv ../$dir/public public/$version
 done

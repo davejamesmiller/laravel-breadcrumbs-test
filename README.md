@@ -11,7 +11,7 @@ scripts/setup.sh
 
 Point the document root at the `public/` directory and open up a web browser. There is a separate folder for each supported version of Laravel, each containing a test application.
 
-Laravel Breadcrumbs itself will be installed in `laravel-breadcrumbs/`.
+Laravel Breadcrumbs itself will be installed in `breadcrumbs/`.
 
 ## Adding a new Laravel version
 
