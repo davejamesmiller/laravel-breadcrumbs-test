@@ -39,7 +39,13 @@ Route::name('post')->get('/post/{post}', function ($post) {
     return view('post', compact('post'));
 });
 
+Route::view('/unnamed', 'unnamed');
 Route::view('/section', 'section')->name('section');
+
+Route::name('server-error')->get('/server-error', function () {
+    abort(500);
+});
+
 Route::view('/bootstrap2', 'bootstrap2')->name('bootstrap2');
 Route::view('/bootstrap3', 'bootstrap3')->name('bootstrap3');
 Route::view('/bulma', 'bulma')->name('bulma');
@@ -48,8 +54,6 @@ Route::view('/materialize', 'materialize')->name('materialize');
 Route::view('/uikit', 'uikit')->name('uikit');
 Route::view('/print_r', 'print_r')->name('print_r');
 
-Route::view('/unnamed', 'unnamed');
-
-Route::name('server-error')->get('/server-error', function () {
-    abort(500);
-});
+Route::view('/missing-exception', 'missing-exception')->name('missing-exception');
+Route::view('/invalid-exception', 'invalid-exception')->name('invalid-exception');
+Route::view('/unnamed-exception', 'unnamed-exception');

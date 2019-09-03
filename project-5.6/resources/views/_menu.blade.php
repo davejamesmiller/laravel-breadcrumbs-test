@@ -16,3 +16,8 @@
 <a href="{{ route('materialize') }}">Materialize</a> /
 <a href="{{ route('uikit') }}">UIkit</a> /
 <a href="{{ route('print_r') }}">print_r</a>
+<br>
+Exceptions:
+<a href="{{ url('missing-exception') }}">Missing</a> /
+<a href="{{ url('invalid-exception') }}">Invalid</a> /
+<a href="{{ url('unnamed-exception') }}">Unnamed</a>

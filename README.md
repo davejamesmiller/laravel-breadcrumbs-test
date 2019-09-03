@@ -30,25 +30,9 @@ ln -s ../project-$version/public $version
 - Copy files from previous version:
     - `app/Category.php`
     - `app/Post.php`
-    - `breadcrumbs/`
+    - `breadcrumbs/*`
     - `config/breadcrumbs.php`
-    - `resources/views/_breadcrumbs/`
-    - `resources/views/errors/`
-    - `resources/views/layouts/`
-    - `resources/views/_menu.blade.php`
-    - `resources/views/_samples.blade.php`
-    - `resources/views/blog.blade.php`
-    - `resources/views/bootstrap2.blade.php`
-    - `resources/views/bootstrap3.blade.php`
-    - `resources/views/bulma.blade.php`
-    - `resources/views/category.blade.php`
-    - `resources/views/foundation6.blade.php`
-    - `resources/views/home.blade.php`
-    - `resources/views/materialize.blade.php`
-    - `resources/views/post.blade.php`
-    - `resources/views/print_r.blade.php`
-    - `resources/views/section.blade.php`
-    - `resources/views/unnamed.blade.php`
+    - `resources/views/*` except `welcome.blade.php`
     - `routes/web.php`
 - Compare the old and new versions for things that need to be updated:
     - `repositories` and `require` sections in `composer.json`
