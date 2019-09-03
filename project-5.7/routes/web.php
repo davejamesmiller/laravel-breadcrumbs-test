@@ -53,7 +53,13 @@ Route::view('/foundation6', 'foundation6')->name('foundation6');
 Route::view('/materialize', 'materialize')->name('materialize');
 Route::view('/uikit', 'uikit')->name('uikit');
 Route::view('/print_r', 'print_r')->name('print_r');
-
+Route::view('/duplicate-exception', 'duplicate-exception')->name('duplicate-exception');
 Route::view('/missing-exception', 'missing-exception')->name('missing-exception');
 Route::view('/invalid-exception', 'invalid-exception')->name('invalid-exception');
-Route::view('/unnamed-exception', 'unnamed-exception');
+Route::view('/unnamed-exception-view', 'unnamed-exception');
+Route::get('/unnamed-exception-action', 'UnnamedExceptionController@action');
+Route::get('/unnamed-exception-invokable', 'UnnamedExceptionController');
+Route::get('/unnamed-exception-closure', function () {
+    return view('unnamed-exception');
+});
+Route::view('/view-exception', 'view-exception')->name('view-exception');

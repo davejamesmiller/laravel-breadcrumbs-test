@@ -20,6 +20,7 @@
         "php": "^7.2",
         "barryvdh/laravel-ide-helper": "^2.4",
         "davejamesmiller/laravel-breadcrumbs": "@dev",
+        "facade/ignition": "^1.4",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0"

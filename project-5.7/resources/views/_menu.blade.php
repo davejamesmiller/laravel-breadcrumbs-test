@@ -18,6 +18,11 @@
 <a href="{{ route('print_r') }}">print_r</a>
 <br>
 Exceptions:
+<a href="{{ url('duplicate-exception') }}">Duplicate</a> /
 <a href="{{ url('missing-exception') }}">Missing</a> /
 <a href="{{ url('invalid-exception') }}">Invalid</a> /
-<a href="{{ url('unnamed-exception') }}">Unnamed</a>
+<a href="{{ url('unnamed-exception-action') }}">Unnamed (Action)</a> /
+<a href="{{ url('unnamed-exception-invokable') }}">Unnamed (Invokable)</a> /
+<a href="{{ url('unnamed-exception-view') }}">Unnamed (View)</a> /
+<a href="{{ url('unnamed-exception-closure') }}">Unnamed (Closure)</a> /
+<a href="{{ url('view-exception') }}">View not set</a>

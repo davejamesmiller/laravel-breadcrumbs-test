@@ -30,6 +30,7 @@ ln -s ../project-$version/public $version
 - Copy files from previous version:
     - `app/Category.php`
     - `app/Post.php`
+    - `app/Http/Controllers/UnnamedExceptionController.php`
     - `breadcrumbs/*`
     - `config/breadcrumbs.php`
     - `resources/views/*` except `welcome.blade.php`
