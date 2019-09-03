@@ -21,10 +21,10 @@ cd laravel-template
 git checkout master  # Or another branch (master = stable, develop = unstable, or a version number)
 git pull
 cd ..
-cp -r laravel-template laravel-$version-project
-rm -rf laravel-$version-project/.git
+cp -r laravel-template project-$version
+rm -rf project-$version/.git
 cd public
-ln -s ../laravel-$version-project/public laravel-$version
+ln -s ../project-$version/public laravel-$version
 ```
 
 - Copy files from previous version:
@@ -54,7 +54,6 @@ ln -s ../laravel-$version-project/public laravel-$version
     - `repositories` and `require` sections in `composer.json`
     - `debug`, `key` in `config/app.php`
     - `path` in `config/session.php`
-- Update `scripts/setup.sh` to include the new version (if required)
 - Update `breadcrumbs/composer.json` to support the new version
 - Run `scripts/setup.sh`
 - Test it and update as needed
