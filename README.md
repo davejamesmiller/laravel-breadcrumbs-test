@@ -24,7 +24,7 @@ cd ..
 cp -r laravel-template project-$version
 rm -rf project-$version/.git
 cd public
-ln -s ../project-$version/public laravel-$version
+ln -s ../project-$version/public $version
 ```
 
 - Copy files from previous version:
