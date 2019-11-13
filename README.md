@@ -1,5 +1,11 @@
 # Laravel Breadcrumbs Test App
 
+This is a small application to test the visual aspects of the [Laravel Breadcrumbs](https://github.com/davejamesmiller/laravel-breadcrumbs) package.
+
+It includes test projects for all currently supported versions of Laravel, with pages for each of the built-in templates and demos of the [Ignition](https://github.com/facade/ignition) integration.
+
+This is in addition to the [100% code coverage](https://coveralls.io/github/davejamesmiller/laravel-breadcrumbs?branch=master) provided by the [unit & integration tests](https://github.com/davejamesmiller/laravel-breadcrumbs/tree/master/tests) (not an alternative to it).
+
 ## Installing
 
 This will only work on systems that support symlinks - i.e. not Windows!
@@ -11,7 +17,7 @@ scripts/setup.sh
 
 Point the document root at the `public/` directory and open up a web browser. There is a separate folder for each supported version of Laravel, each containing a test application.
 
-Laravel Breadcrumbs itself will be installed in `breadcrumbs/`.
+Laravel Breadcrumbs itself (master branch) will be installed in `breadcrumbs/`.
 
 ## Adding a new Laravel version
 
