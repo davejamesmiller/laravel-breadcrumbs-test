@@ -1,8 +1,6 @@
 <?php
-Breadcrumbs::for('duplicate', function () {
-});
-Breadcrumbs::for('duplicate', function () {
-});
+Breadcrumbs::for('duplicate', function () { });
+Breadcrumbs::for('duplicate', function () { });
 ?>
 @extends('layouts/default')
 
