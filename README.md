@@ -23,8 +23,7 @@ git pull
 cd ..
 cp -r laravel-template project-$version
 rm -rf project-$version/.git
-cd public
-ln -s ../project-$version/public $version
+scripts/update-links.sh
 ```
 
 - Copy files from previous version:
@@ -47,5 +46,5 @@ ln -s ../project-$version/public $version
 ## Removing an old Laravel version
 
 - `rm -rf laravel-<version>-project`
-- `rm -f public/laravel-<version>`
+- `scripts/update-links.sh`
 - Commit and push changes
