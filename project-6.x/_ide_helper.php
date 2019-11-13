@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 6.0-dev on 2019-11-13 21:32:02.
+ * Generated for Laravel 6.5.1 on 2019-11-13 21:55:26.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -1795,6 +1795,18 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Determines if any guards have already been resolved.
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasResolvedGuards()
+        {
+                        /** @var \Illuminate\Auth\AuthManager $instance */
+                        return $instance->hasResolvedGuards();
+        }
+        
+        /**
          * Create the user provider implementation for the driver.
          *
          * @param string|null $provider
@@ -2530,7 +2542,7 @@ namespace Illuminate\Support\Facades {
     /**
      * 
      *
-     * @method static \Illuminate\Broadcasting\Broadcasters\Broadcaster channel(string $channel, callable|string  $callback)
+     * @method static \Illuminate\Broadcasting\Broadcasters\Broadcaster channel(string $channel, callable|string  $callback, array $options = [])
      * @method static mixed auth(\Illuminate\Http\Request $request)
      * @see \Illuminate\Contracts\Broadcasting\Factory
      */ 
@@ -3251,7 +3263,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the default cache time.
          *
-         * @return int 
+         * @return int|null 
          * @static 
          */ 
         public static function getDefaultCacheTime()
@@ -5171,6 +5183,19 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Determine if a file or directory is missing.
+         *
+         * @param string $path
+         * @return bool 
+         * @static 
+         */ 
+        public static function missing($path)
+        {
+                        /** @var \Illuminate\Filesystem\Filesystem $instance */
+                        return $instance->missing($path);
+        }
+        
+        /**
          * Get the contents of a file.
          *
          * @param string $path
@@ -6457,118 +6482,6 @@ namespace Illuminate\Support\Facades {
     class Log {
         
         /**
-         * Adds a log record at the DEBUG level.
-         *
-         * @param string $message The log message
-         * @param array $context The log context
-         * @return bool Whether the record has been processed
-         * @static 
-         */ 
-        public static function debug($message, $context = array())
-        {
-                        /** @var \Monolog\Logger $instance */
-                        return $instance->addDebug($message, $context);
-        }
-        
-        /**
-         * Adds a log record at the INFO level.
-         *
-         * @param string $message The log message
-         * @param array $context The log context
-         * @return bool Whether the record has been processed
-         * @static 
-         */ 
-        public static function info($message, $context = array())
-        {
-                        /** @var \Monolog\Logger $instance */
-                        return $instance->addInfo($message, $context);
-        }
-        
-        /**
-         * Adds a log record at the NOTICE level.
-         *
-         * @param string $message The log message
-         * @param array $context The log context
-         * @return bool Whether the record has been processed
-         * @static 
-         */ 
-        public static function notice($message, $context = array())
-        {
-                        /** @var \Monolog\Logger $instance */
-                        return $instance->addNotice($message, $context);
-        }
-        
-        /**
-         * Adds a log record at the WARNING level.
-         *
-         * @param string $message The log message
-         * @param array $context The log context
-         * @return bool Whether the record has been processed
-         * @static 
-         */ 
-        public static function warning($message, $context = array())
-        {
-                        /** @var \Monolog\Logger $instance */
-                        return $instance->addWarning($message, $context);
-        }
-        
-        /**
-         * Adds a log record at the ERROR level.
-         *
-         * @param string $message The log message
-         * @param array $context The log context
-         * @return bool Whether the record has been processed
-         * @static 
-         */ 
-        public static function error($message, $context = array())
-        {
-                        /** @var \Monolog\Logger $instance */
-                        return $instance->addError($message, $context);
-        }
-        
-        /**
-         * Adds a log record at the CRITICAL level.
-         *
-         * @param string $message The log message
-         * @param array $context The log context
-         * @return bool Whether the record has been processed
-         * @static 
-         */ 
-        public static function critical($message, $context = array())
-        {
-                        /** @var \Monolog\Logger $instance */
-                        return $instance->addCritical($message, $context);
-        }
-        
-        /**
-         * Adds a log record at the ALERT level.
-         *
-         * @param string $message The log message
-         * @param array $context The log context
-         * @return bool Whether the record has been processed
-         * @static 
-         */ 
-        public static function alert($message, $context = array())
-        {
-                        /** @var \Monolog\Logger $instance */
-                        return $instance->addAlert($message, $context);
-        }
-        
-        /**
-         * Adds a log record at the EMERGENCY level.
-         *
-         * @param string $message The log message
-         * @param array $context The log context
-         * @return bool Whether the record has been processed
-         * @static 
-         */ 
-        public static function emergency($message, $context = array())
-        {
-                        /** @var \Monolog\Logger $instance */
-                        return $instance->addEmergency($message, $context);
-        }
-        
-        /**
          * Create a new, on-demand aggregate logger instance.
          *
          * @param array $channels
@@ -6609,6 +6522,18 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * 
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getChannels()
+        {
+                        /** @var \Illuminate\Log\LogManager $instance */
+                        return $instance->getChannels();
+        }
+        
+        /**
          * Get the default log driver name.
          *
          * @return string 
@@ -6645,6 +6570,142 @@ namespace Illuminate\Support\Facades {
         {
                         /** @var \Illuminate\Log\LogManager $instance */
                         return $instance->extend($driver, $callback);
+        }
+        
+        /**
+         * Unset the given channel instance.
+         *
+         * @param string|null $name
+         * @return \Illuminate\Log\LogManager 
+         * @static 
+         */ 
+        public static function forgetChannel($driver = null)
+        {
+                        /** @var \Illuminate\Log\LogManager $instance */
+                        return $instance->forgetChannel($driver);
+        }
+        
+        /**
+         * System is unusable.
+         *
+         * @param string $message
+         * @param array $context
+         * @return void 
+         * @static 
+         */ 
+        public static function emergency($message, $context = array())
+        {
+                        /** @var \Illuminate\Log\LogManager $instance */
+                        $instance->emergency($message, $context);
+        }
+        
+        /**
+         * Action must be taken immediately.
+         * 
+         * Example: Entire website down, database unavailable, etc. This should
+         * trigger the SMS alerts and wake you up.
+         *
+         * @param string $message
+         * @param array $context
+         * @return void 
+         * @static 
+         */ 
+        public static function alert($message, $context = array())
+        {
+                        /** @var \Illuminate\Log\LogManager $instance */
+                        $instance->alert($message, $context);
+        }
+        
+        /**
+         * Critical conditions.
+         * 
+         * Example: Application component unavailable, unexpected exception.
+         *
+         * @param string $message
+         * @param array $context
+         * @return void 
+         * @static 
+         */ 
+        public static function critical($message, $context = array())
+        {
+                        /** @var \Illuminate\Log\LogManager $instance */
+                        $instance->critical($message, $context);
+        }
+        
+        /**
+         * Runtime errors that do not require immediate action but should typically
+         * be logged and monitored.
+         *
+         * @param string $message
+         * @param array $context
+         * @return void 
+         * @static 
+         */ 
+        public static function error($message, $context = array())
+        {
+                        /** @var \Illuminate\Log\LogManager $instance */
+                        $instance->error($message, $context);
+        }
+        
+        /**
+         * Exceptional occurrences that are not errors.
+         * 
+         * Example: Use of deprecated APIs, poor use of an API, undesirable things
+         * that are not necessarily wrong.
+         *
+         * @param string $message
+         * @param array $context
+         * @return void 
+         * @static 
+         */ 
+        public static function warning($message, $context = array())
+        {
+                        /** @var \Illuminate\Log\LogManager $instance */
+                        $instance->warning($message, $context);
+        }
+        
+        /**
+         * Normal but significant events.
+         *
+         * @param string $message
+         * @param array $context
+         * @return void 
+         * @static 
+         */ 
+        public static function notice($message, $context = array())
+        {
+                        /** @var \Illuminate\Log\LogManager $instance */
+                        $instance->notice($message, $context);
+        }
+        
+        /**
+         * Interesting events.
+         * 
+         * Example: User logs in, SQL logs.
+         *
+         * @param string $message
+         * @param array $context
+         * @return void 
+         * @static 
+         */ 
+        public static function info($message, $context = array())
+        {
+                        /** @var \Illuminate\Log\LogManager $instance */
+                        $instance->info($message, $context);
+        }
+        
+        /**
+         * Detailed debug information.
+         *
+         * @param string $message
+         * @param array $context
+         * @return void 
+         * @static 
+         */ 
+        public static function debug($message, $context = array())
+        {
+                        /** @var \Illuminate\Log\LogManager $instance */
+                        $instance->debug($message, $context);
         }
         
         /**
@@ -7426,8 +7487,6 @@ namespace Illuminate\Support\Facades {
      *
      * @method static string sendResetLink(array $credentials)
      * @method static mixed reset(array $credentials, \Closure $callback)
-     * @method static void validator(\Closure $callback)
-     * @method static bool validateNewPassword(array $credentials)
      * @see \Illuminate\Auth\Passwords\PasswordBroker
      */ 
     class Password {
@@ -8617,7 +8676,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string|null $param
          * @param mixed $default
-         * @return \Illuminate\Routing\Route|object|string 
+         * @return \Illuminate\Routing\Route|object|string|null 
          * @static 
          */ 
         public static function route($param = null, $default = null)
@@ -9582,7 +9641,6 @@ namespace Illuminate\Support\Facades {
          * Checks whether or not the method is safe.
          *
          * @see https://tools.ietf.org/html/rfc7231#section-4.2.1
-         * @param bool $andCacheable Adds the additional condition that the method should be cacheable. True by default.
          * @return bool 
          * @static 
          */ 
@@ -10083,6 +10141,19 @@ namespace Illuminate\Support\Facades {
         {
                         /** @var \Illuminate\Http\Request $instance */
                         return $instance->anyFilled($keys);
+        }
+        
+        /**
+         * Determine if the request is missing a given input item key.
+         *
+         * @param string|array $key
+         * @return bool 
+         * @static 
+         */ 
+        public static function missing($key)
+        {
+                        /** @var \Illuminate\Http\Request $instance */
+                        return $instance->missing($key);
         }
         
         /**
@@ -11355,6 +11426,18 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Register the typical confirm password routes for an application.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function confirmPassword()
+        {
+                        /** @var \Illuminate\Routing\Router $instance */
+                        $instance->confirmPassword();
+        }
+        
+        /**
          * Register the typical email verification routes for an application.
          *
          * @return void 
@@ -12619,6 +12702,19 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Determine if a file or directory is missing.
+         *
+         * @param string $path
+         * @return bool 
+         * @static 
+         */ 
+        public static function missing($path)
+        {
+                        /** @var \Illuminate\Filesystem\FilesystemAdapter $instance */
+                        return $instance->missing($path);
+        }
+        
+        /**
          * Get the full path for the file at the given "short" path.
          *
          * @param string $path
@@ -12878,7 +12974,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $path
          * @return resource|null The path resource or null on failure.
-         * @throws FileNotFoundException
+         * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
          * @static 
          */ 
         public static function readStream($path)
@@ -12895,7 +12991,7 @@ namespace Illuminate\Support\Facades {
          * @param array $options
          * @return bool 
          * @throws \InvalidArgumentException If $resource is not a file handle.
-         * @throws FileExistsException
+         * @throws \Illuminate\Contracts\Filesystem\FileExistsException
          * @static 
          */ 
         public static function writeStream($path, $resource, $options = array())
@@ -13178,6 +13274,7 @@ namespace Illuminate\Support\Facades {
          * @param \DateTimeInterface|\DateInterval|int|null $expiration
          * @param bool $absolute
          * @return string 
+         * @throws \InvalidArgumentException
          * @static 
          */ 
         public static function signedRoute($name, $parameters = array(), $expiration = null, $absolute = true)
@@ -13217,13 +13314,40 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Determine if the signature from the given request matches the URL.
+         *
+         * @param \Illuminate\Http\Request $request
+         * @param bool $absolute
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasCorrectSignature($request, $absolute = true)
+        {
+                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+                        return $instance->hasCorrectSignature($request, $absolute);
+        }
+        
+        /**
+         * Determine if the expires timestamp from the given request is not from the past.
+         *
+         * @param \Illuminate\Http\Request $request
+         * @return bool 
+         * @static 
+         */ 
+        public static function signatureHasNotExpired($request)
+        {
+                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+                        return $instance->signatureHasNotExpired($request);
+        }
+        
+        /**
          * Get the URL to a named route.
          *
          * @param string $name
          * @param mixed $parameters
          * @param bool $absolute
          * @return string 
-         * @throws \InvalidArgumentException
+         * @throws \Symfony\Component\Routing\Exception\RouteNotFoundException
          * @static 
          */ 
         public static function route($name, $parameters = array(), $absolute = true)
@@ -14931,6 +15055,17 @@ namespace Facade\Ignition\Facades {
          *
          * @static 
          */ 
+        public static function reportMessage($message, $logLevel, $callback = null)
+        {
+                        /** @var \Facade\FlareClient\Flare $instance */
+                        return $instance->reportMessage($message, $logLevel, $callback);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
         public static function sendTestReport($throwable)
         {
                         /** @var \Facade\FlareClient\Flare $instance */
@@ -14968,6 +15103,17 @@ namespace Facade\Ignition\Facades {
         {
                         /** @var \Facade\FlareClient\Flare $instance */
                         return $instance->createReport($throwable);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function createReportFromMessage($message, $logLevel)
+        {
+                        /** @var \Facade\FlareClient\Flare $instance */
+                        return $instance->createReportFromMessage($message, $logLevel);
         }
         
         /**
@@ -15061,7 +15207,7 @@ namespace  {
              * Create and return an un-saved model instance.
              *
              * @param array $attributes
-             * @return \Illuminate\Database\Eloquent\Model 
+             * @return \Illuminate\Database\Eloquent\Model|static 
              * @static 
              */ 
             public static function make($attributes = array())
@@ -15658,6 +15804,43 @@ namespace  {
             {
                                 /** @var \Illuminate\Database\Eloquent\Builder $instance */
                                 return $instance->getMacro($name);
+            }
+         
+            /**
+             * Checks if a macro is registered.
+             *
+             * @param string $name
+             * @return bool 
+             * @static 
+             */ 
+            public static function hasMacro($name)
+            {
+                                /** @var \Illuminate\Database\Eloquent\Builder $instance */
+                                return $instance->hasMacro($name);
+            }
+         
+            /**
+             * Get the given global macro by name.
+             *
+             * @param string $name
+             * @return \Closure 
+             * @static 
+             */ 
+            public static function getGlobalMacro($name)
+            {
+                                return \Illuminate\Database\Eloquent\Builder::getGlobalMacro($name);
+            }
+         
+            /**
+             * Checks if a global macro is registered.
+             *
+             * @param string $name
+             * @return bool 
+             * @static 
+             */ 
+            public static function hasGlobalMacro($name)
+            {
+                                return \Illuminate\Database\Eloquent\Builder::hasGlobalMacro($name);
             }
          
             /**
@@ -16540,15 +16723,15 @@ namespace  {
             /**
              * Add a "where not null" clause to the query.
              *
-             * @param string $column
+             * @param string|array $columns
              * @param string $boolean
              * @return \Illuminate\Database\Query\Builder|static 
              * @static 
              */ 
-            public static function whereNotNull($column, $boolean = 'and')
+            public static function whereNotNull($columns, $boolean = 'and')
             {
                                 /** @var \Illuminate\Database\Query\Builder $instance */
-                                return $instance->whereNotNull($column, $boolean);
+                                return $instance->whereNotNull($columns, $boolean);
             }
          
             /**
@@ -17027,7 +17210,7 @@ namespace  {
             /**
              * Add a "group by" clause to the query.
              *
-             * @param array $groups
+             * @param array|string $groups
              * @return \Illuminate\Database\Query\Builder 
              * @static 
              */ 
@@ -17389,6 +17572,32 @@ namespace  {
             {
                                 /** @var \Illuminate\Database\Query\Builder $instance */
                                 return $instance->doesntExist();
+            }
+         
+            /**
+             * Execute the given callback if no rows exist for the current query.
+             *
+             * @param \Closure $callback
+             * @return mixed 
+             * @static 
+             */ 
+            public static function existsOr($callback)
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->existsOr($callback);
+            }
+         
+            /**
+             * Execute the given callback if rows exist for the current query.
+             *
+             * @param \Closure $callback
+             * @return mixed 
+             * @static 
+             */ 
+            public static function doesntExistOr($callback)
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->doesntExistOr($callback);
             }
          
             /**
@@ -17768,18 +17977,6 @@ namespace  {
             public static function mixin($mixin, $replace = true)
             {
                                 \Illuminate\Database\Query\Builder::mixin($mixin, $replace);
-            }
-         
-            /**
-             * Checks if macro is registered.
-             *
-             * @param string $name
-             * @return bool 
-             * @static 
-             */ 
-            public static function hasMacro($name)
-            {
-                                return \Illuminate\Database\Query\Builder::hasMacro($name);
             }
          
             /**
