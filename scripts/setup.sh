@@ -3,7 +3,7 @@ set -o nounset -o pipefail -o errexit
 cd "$(dirname "$0")/.."
 
 ################################################################################
-# Install all dependencies for Laravel Breadcrumbs.
+# Install all packages and dependencies.
 ################################################################################
 
 if [ ! -d breadcrumbs ]; then
