@@ -7,9 +7,11 @@ cd "$(dirname "$0")/.."
 ################################################################################
 
 for project in project-*; do
-    cd $project
-    php artisan ide-helper:generate
-    php artisan ide-helper:meta
-    #php artisan ide-helper:models --reset --write
-    cd ..
+    if [ -d "$project/vendor/barryvdh/laravel-ide-helper" ]; then
+        cd $project
+        php artisan ide-helper:generate
+        php artisan ide-helper:meta
+        #php artisan ide-helper:models --reset --write
+        cd ..
+    fi
 done

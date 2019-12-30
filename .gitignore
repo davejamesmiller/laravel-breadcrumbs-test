@@ -1,4 +1,5 @@
 /breadcrumbs/
-/laravel-template/
+/project-*.*/
+/public/*.*
 
 composer.lock
