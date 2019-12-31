@@ -1,5 +1,7 @@
-/breadcrumbs/
 /project-*.*/
 /public/*.*
+
+/breadcrumbs/
+/route-browser/
 
 composer.lock

@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 $packages = [
     'breadcrumbs',
+    'route-browser',
 ];
 
 $versions = [
@@ -193,9 +194,11 @@ foreach ($versions as $version => $branch) {
     file_put_contents($file, json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
 
     // Install packages
-    $requires = [
-        'davejamesmiller/laravel-breadcrumbs=@dev'
-    ];
+    $requires = [];
+
+    foreach ($packages as $package) {
+        $requires[] = "davejamesmiller/laravel-$package=@dev";
+    }
 
     if ($branch !== 'dev-develop') {
         // Not (generally) available for the development version of Laravel

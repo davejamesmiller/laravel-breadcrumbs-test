@@ -1,4 +1,5 @@
-<a href="/">&laquo; Versions</a>
+<a href="/">&laquo; Versions</a> /
+<a href="{{ route('route-browser.list') }}">Route Browser</a>
 <br>
 <strong>Pages:</strong>
 <a href="{{ route('home') }}">Home</a> /
@@ -22,11 +23,11 @@
 <a href="{{ route('print_r') }}">print_r</a>
 <br>
 <strong>Exceptions:</strong>
-<a href="{{ url('duplicate-exception') }}">Duplicate</a> /
-<a href="{{ url('missing-exception') }}">Missing</a> /
-<a href="{{ url('invalid-exception') }}">Invalid</a> /
-<a href="{{ url('unnamed-exception-action') }}">Unnamed (Action)</a> /
-<a href="{{ url('unnamed-exception-invokable') }}">Unnamed (Invokable)</a> /
-<a href="{{ url('unnamed-exception-view') }}">Unnamed (View)</a> /
-<a href="{{ url('unnamed-exception-closure') }}">Unnamed (Closure)</a> /
-<a href="{{ url('view-exception') }}">View not set</a>
+<a href="{{ url('exceptions/duplicate') }}">Duplicate</a> /
+<a href="{{ url('exceptions/missing') }}">Missing</a> /
+<a href="{{ url('exceptions/invalid') }}">Invalid</a> /
+<a href="{{ url('exceptions/unnamed-action') }}">Unnamed (Action)</a> /
+<a href="{{ url('exceptions/unnamed-invokable') }}">Unnamed (Invokable)</a> /
+<a href="{{ url('exceptions/unnamed-view') }}">Unnamed (View)</a> /
+<a href="{{ url('exceptions/unnamed-closure') }}">Unnamed (Closure)</a> /
+<a href="{{ url('exceptions/view') }}">View not set</a>

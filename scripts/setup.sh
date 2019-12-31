@@ -12,23 +12,32 @@ header() {
     echo -e "\e[0m"
 }
 
-if [ -d breadcrumbs ]; then
-    header "Updating Laravel Breadcrumbs..."
-    cd breadcrumbs
-    git pull
-    echo
-    header "Updating Laravel Breadcrumbs dependencies..."
-    composer update
-    cd ..
-else
-    header "Installing Laravel Breadcrumbs..."
-    git clone git@github.com:davejamesmiller/laravel-breadcrumbs.git breadcrumbs
-    echo
-    cd breadcrumbs
-    header "Installing Laravel Breadcrumbs dependencies..."
-    composer install
-    cd ..
-fi
+install() {
+    local slug="$1"
+    local name="$2"
 
-echo
+    if [ -d "$slug" ]; then
+        header "Updating $slug..."
+        cd "$slug"
+        git pull
+        echo
+        header "Updating $slug dependencies..."
+        composer update
+        cd ..
+    else
+        header "Installing $slug..."
+        git clone "git@github.com:davejamesmiller/laravel-$slug.git" "$slug"
+        echo
+        cd "$slug"
+        header "Installing $slug dependencies..."
+        composer install
+        cd ..
+    fi
+
+    echo
+}
+
+install breadcrumbs "Laravel Breadcrumbs"
+#install route-browser "Laravel Route Browser"
+
 scripts/generate-projects.php
