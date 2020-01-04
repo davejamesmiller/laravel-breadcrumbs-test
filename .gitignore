@@ -1,8 +1,11 @@
-/project-*.*/
-/public/*.*
-
+# Packages
 /breadcrumbs/
 /migrations-ui/
 /route-browser/
 
-composer.lock
+# Test projects
+/project-*.*/
+/public/*.*
+
+# Config
+/.env
