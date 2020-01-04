@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 $packages = [
     'breadcrumbs',
+    'migrations-ui',
     'route-browser',
 ];
 

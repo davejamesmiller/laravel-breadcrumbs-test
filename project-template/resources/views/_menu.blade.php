@@ -1,4 +1,5 @@
 <a href="/">&laquo; Versions</a> /
+<a href="{{ url('migrations') }}">Migrations UI</a> /
 <a href="{{ route('route-browser.list') }}">Route Browser</a>
 <br>
 <strong>Pages:</strong>

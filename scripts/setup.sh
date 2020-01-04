@@ -38,6 +38,7 @@ install() {
 }
 
 install breadcrumbs "Laravel Breadcrumbs"
-#install route-browser "Laravel Route Browser"
+install migrations-ui "Laravel Migrations UI"
+install route-browser "Laravel Route Browser"
 
 scripts/generate-projects.php

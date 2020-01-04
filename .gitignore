@@ -2,6 +2,7 @@
 /public/*.*
 
 /breadcrumbs/
+/migrations-ui/
 /route-browser/
 
 composer.lock
