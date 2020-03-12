@@ -201,6 +201,10 @@ foreach ($versions as $version => $branch) {
         $requires[] = "davejamesmiller/laravel-$package=@dev";
     }
 
+    if ($version >= 6) {
+        $requires[] = 'laravel/telescope';
+    }
+
     if ($branch !== 'dev-develop') {
         // Not (generally) available for the development version of Laravel
         $requires[] = 'barryvdh/laravel-ide-helper';
