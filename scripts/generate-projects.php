@@ -10,16 +10,22 @@ declare(strict_types=1);
 # Settings
 #===============================================================================
 
-$packages = [
-    'breadcrumbs',
-    'migrations-ui',
-    'route-browser',
+$myPackages = [
+    'laravel-breadcrumbs',
+    'laravel-migrations-ui',
+    'laravel-route-browser',
+];
+
+$optionalPackages = [
+    'barryvdh/laravel-ide-helper:>=1.0',
+    'laravel/telescope:>=1.0',
 ];
 
 $versions = [
     // Version => Composer version (https://packagist.org/packages/laravel/laravel)
-    '7.x' => 'dev-develop',
+    '8.x' => 'dev-develop',
     // Using tagged versions, not 'dev-master', because that may be unstable
+    '7.x' => '7.x',
     '6.x' => '6.x',
     '5.8' => '5.8',
     '5.7' => '5.7',
@@ -158,7 +164,7 @@ if ($argc > 1) {
 foreach ($versions as $version => $branch) {
 
     // Generate project from the upstream template
-    echo "\n{$blue}Generating Laravel $version project...{$reset}\n";
+    echo "\n{$blue}[{$version}] Generating project...{$reset}\n";
 
     passthru(sprintf(
         'composer --ansi --no-install --no-scripts --remove-vcs create-project laravel/laravel %s %s',
@@ -184,10 +190,10 @@ foreach ($versions as $version => $branch) {
     $file = "project-$version/composer.json";
     $json = json_decode(file_get_contents($file), true);
 
-    foreach ($packages as $package) {
+    foreach ($myPackages as $package) {
         $json['repositories'][] = [
             'type' => 'path',
-            'url' => "../$package",
+            'url' => '../' . str_replace('laravel-', '', $package),
             'options' => ['symlink' => true],
         ];
     }
@@ -196,18 +202,8 @@ foreach ($versions as $version => $branch) {
 
     // Install packages
     $requires = [];
-
-    foreach ($packages as $package) {
-        $requires[] = "davejamesmiller/laravel-$package=@dev";
-    }
-
-    if ($version >= 6) {
-        $requires[] = 'laravel/telescope';
-    }
-
-    if ($branch !== 'dev-develop') {
-        // Not (generally) available for the development version of Laravel
-        $requires[] = 'barryvdh/laravel-ide-helper';
+    foreach ($myPackages as $package) {
+        $requires[] = "davejamesmiller/$package:@dev";
     }
 
     passthru(sprintf(
@@ -215,6 +211,16 @@ foreach ($versions as $version => $branch) {
         escapeshellarg("project-$version"),
         implode(' ', array_map('escapeshellarg', $requires))
     ));
+
+    // Try to install optional packages - individually so one failing doesn't stop them all being installed
+    foreach ($optionalPackages as $package) {
+        echo "\n{$blue}[{$version}] Installing optional package {$package}...{$reset}\n";
+        passthru(sprintf(
+            'cd %s && composer --ansi require %s',
+            escapeshellarg("project-$version"),
+            escapeshellarg($package)
+        ));
+    }
 
 }
 
