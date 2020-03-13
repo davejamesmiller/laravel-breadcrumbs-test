@@ -3,9 +3,16 @@
 This is a small application to test my [Laravel](https://laravel.com/) packages:
 
 - [Laravel Breadcrumbs](https://github.com/davejamesmiller/laravel-breadcrumbs)
-- More to come...
+- [Laravel Migrations UI](https://github.com/davejamesmiller/laravel-migrations-ui)
+- [Laravel Route Browser](https://github.com/davejamesmiller/laravel-route-browser)
 
 This is in addition to the unit & integration tests (not an alternative to them).
+
+## Requirements
+
+- PHP
+- Composer (`composer` executable in $PATH)
+- MySQL (for Laravel Migrations UI only)
 
 ## Installing
 
