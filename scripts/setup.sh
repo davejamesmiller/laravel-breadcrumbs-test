@@ -37,6 +37,10 @@ install() {
     echo
 }
 
+if [ ! -f .env ]; then
+    cp .env.example .env
+fi
+
 install breadcrumbs "Laravel Breadcrumbs"
 install migrations-ui "Laravel Migrations UI"
 install route-browser "Laravel Route Browser"
