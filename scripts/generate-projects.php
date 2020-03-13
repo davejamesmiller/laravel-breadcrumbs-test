@@ -96,7 +96,7 @@ function symlink_recursive(string $target, string $link): void
     // Use symlinks so I can edit the source files and directly affect all
     // projects. That way I only need to re-run this script after
     // adding/deleting files, not after every change.
-    if (is_file($target)) {
+    if (is_file($target) || is_link($target)) {
         if (file_exists($link)) {
             unlink($link);
         }
