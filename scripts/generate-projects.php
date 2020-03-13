@@ -17,6 +17,7 @@ $myPackages = [
 ];
 
 $optionalPackages = [
+    'barryvdh/laravel-debugbar:>=1.0',
     'barryvdh/laravel-ide-helper:>=1.0',
     'laravel/telescope:>=1.0',
 ];
