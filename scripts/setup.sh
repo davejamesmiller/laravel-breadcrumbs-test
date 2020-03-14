@@ -29,40 +29,16 @@ install() {
         cd "$slug"
     fi
 
-    # Create .env file, if required
-    if [ -f .env.example -a ! -f .env ]; then
-        header "Creating $slug/.env..."
-        cp -v .env.example .env
-        echo
-    fi
-
-    # Install/update PHP dependencies
-    if [ -d vendor ]; then
-        header "Updating $slug PHP dependencies..."
-    else
-        header "Installing $slug PHP dependencies..."
-    fi
-    composer update
-    echo
-
-    # Install/update frontend dependencies
-    if [ -d node_modules ]; then
-        header "Updating $slug frontend dependencies..."
-    else
-        header "Installing $slug frontend dependencies..."
-    fi
-    yarn install
-    echo
-
     cd ..
 }
 
 if [ ! -f .env ]; then
-    cp .env.example .env
+    header 'Creating .env'
+    cp -v .env.example .env
 fi
 
-install breadcrumbs "Laravel Breadcrumbs"
-install migrations-ui "Laravel Migrations UI"
-install route-browser "Laravel Route Browser"
+install breadcrumbs 'Laravel Breadcrumbs'
+install migrations-ui 'Laravel Migrations UI'
+install route-browser 'Laravel Route Browser'
 
 scripts/generate-projects.php
