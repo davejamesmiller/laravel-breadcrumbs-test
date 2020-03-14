@@ -16,6 +16,10 @@ install() {
     local slug="$1"
     local name="$2"
 
+    if [ -f "$slug/.env.example" -a ! -f "$slug/.env" ]; then
+        cp "$slug/.env.example" "$slug/.env"
+    fi
+
     if [ -d "$slug" ]; then
         header "Updating $slug..."
         cd "$slug"
