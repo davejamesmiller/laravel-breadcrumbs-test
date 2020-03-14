@@ -16,29 +16,45 @@ install() {
     local slug="$1"
     local name="$2"
 
-    if [ -f "$slug/.env.example" -a ! -f "$slug/.env" ]; then
-        cp "$slug/.env.example" "$slug/.env"
-    fi
-
+    # Install/update package
     if [ -d "$slug" ]; then
         header "Updating $slug..."
         cd "$slug"
         git pull
         echo
-        header "Updating $slug dependencies..."
-        composer update
-        cd ..
     else
         header "Installing $slug..."
         git clone "git@github.com:davejamesmiller/laravel-$slug.git" "$slug"
         echo
         cd "$slug"
-        header "Installing $slug dependencies..."
-        composer install
-        cd ..
     fi
 
+    # Create .env file, if required
+    if [ -f .env.example -a ! -f .env ]; then
+        header "Creating $slug/.env..."
+        cp -v .env.example .env
+        echo
+    fi
+
+    # Install/update PHP dependencies
+    if [ -d vendor ]; then
+        header "Updating $slug PHP dependencies..."
+    else
+        header "Installing $slug PHP dependencies..."
+    fi
+    composer update
     echo
+
+    # Install/update frontend dependencies
+    if [ -d node_modules ]; then
+        header "Updating $slug frontend dependencies..."
+    else
+        header "Installing $slug frontend dependencies..."
+    fi
+    yarn install
+    echo
+
+    cd ..
 }
 
 if [ ! -f .env ]; then
